@@ -12,7 +12,7 @@ from server.error_handling import NotificationError
 def init_app(app):
     if not len(firebase_admin._apps):
         logger.debug("initializing firebase app")
-        cred = credentials.Certificate(json.loads(app.config["FIREBASE_JSON"]))
+        cred = credentials.Certificate(json.loads(app.config["api/firebase_cred.json"]))
         firebase_admin.initialize_app(cred)
 
 

@@ -5,7 +5,7 @@ import string
 from typing import Tuple, Type
 
 import flask
-from cloudinary.uploader import upload
+#from cloudinary.uploader import upload
 from flask import Blueprint
 from flask_login import current_user, login_required, login_user, logout_user
 from loguru import logger
@@ -227,8 +227,8 @@ def handle_oauth(network: Type[SocialNetwork], access_token: str):
 
         try:
             image_url = profile["picture"]["data"].get("url")
-            logger.info(f"Uploading {image_url} to Cloudinary...")
-            image = upload(image_url)["public_id"]
+            #logger.info(f"Uploading {image_url} to Cloudinary...")
+            #image = upload(image_url)["public_id"]
         except Exception:
             image = ""
         # Create a new local user account for this user

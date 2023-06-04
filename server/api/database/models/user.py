@@ -7,7 +7,7 @@ from enum import Enum, auto
 from typing import Dict
 
 import jwt
-from cloudinary.utils import cloudinary_url
+#from cloudinary.utils import cloudinary_url
 from flask import current_app
 from flask_login import UserMixin
 from sqlalchemy.orm.exc import NoResultFound
@@ -159,8 +159,8 @@ class User(UserMixin, SurrogatePK, Model):
     def role_info(self):
         info = self.teacher or self.student or {}
         return info.to_dict(with_user=False) if info else {}
-
-    def to_dict(self):
+    """
+     def to_dict(self):
         image = ""
         if self.image:
             try:
@@ -185,3 +185,4 @@ class User(UserMixin, SurrogatePK, Model):
         }
 
         return dict(**attrs, **self.role_info())
+ """
